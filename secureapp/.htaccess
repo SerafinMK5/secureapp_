@@ -1,0 +1,28 @@
+# Activar el motor de reescritura de URLs
+RewriteEngine On
+
+# MODIFICAIÓN 2, Quitamos la redirección forzda a HTTPS###################
+# Redirigir todas las solicitudes a HTTPS si no están en HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Seguridad adicional recomendada
+# Evitar que se muestren errores del servidor
+ServerSignature Off
+
+# Deshabilitar listado de directorios
+Options -Indexes
+
+# MODIFICAIÓN 1############################
+# Bloqueo de ejecución PHP
+#  <FilesMatch "\.(php|php5|phtml)$">
+#     Order Deny,Allow
+#    Deny from all
+# </FilesMatch>
+
+# Protección básica contra XSS y clickjacking
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "DENY"
+    Header always set X-XSS-Protection "1; mode=block"
+</IfModule>
