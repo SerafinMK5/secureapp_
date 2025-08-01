@@ -1,11 +1,11 @@
 <?php
 require_once __DIR__ . '/load_env.php'; // asegúrate que esto se cargue primero
 
-$host = get_config('DB_HOST', 'localhost');
-$port = get_config('DB_PORT', '29358'); // puerto por defecto si no se define
-$db   = get_config('DB_NAME', 'secure_app');
-$user = get_config('DB_USER', 'root');
-$pass = get_config('DB_PASS', '');
+$host = getenv('DB_HOST');
+$db   = getenv('DB_NAME');
+$port = getenv('DB_PORT');
+$user = getenv('DB_USER');
+$pass = getenv('DB_PASS');
 
 try {
     // ✅ Incluir el puerto explícitamente
