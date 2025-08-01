@@ -29,7 +29,7 @@
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
 
-            fetch('http://localhost:3000/auth/register.php', {
+            fetch('https://webbasic.onrender.com/auth/register.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
