@@ -14,7 +14,7 @@ function get_config(string $key, $default = null) {
 }
 
 // Obtener dominio principal desde configuración (variable de entorno o .env)
-$main_domain = get_config('MAIN_DOMAIN', 'https://secureapp.onrender.com');
+$main_domain = get_config('MAIN_DOMAIN', 'https://webbasic.onrender.com/');
 
 // Lista blanca de orígenes permitidos
 $allowed_origins = [
