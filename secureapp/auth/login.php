@@ -37,6 +37,7 @@ if ($user && password_verify($password, $user['password'])) {
     $correoExito = sendTokenByEmail($user['email'], $token);
 
     if ($correoExito) {
+        ob_clean();
         #1.- Agregamos "Success" a la respuesta.
         echo json_encode(['success' => true,
         'message' => 'Token enviado al correo electrónico.']);
