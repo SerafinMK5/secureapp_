@@ -1,4 +1,4 @@
-const API_BASE = 'http://192.168.43.106:3000'; // Ajusta esto si tu backend está en otra ruta
+const API_BASE = 'https://webbasic.onrender.com'; // Ajusta esto si tu backend está en otra ruta
 
 // LOGIN
 const loginForm = document.getElementById('loginForm');
